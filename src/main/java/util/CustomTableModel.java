@@ -6,13 +6,19 @@ import org.maria.demoexam.ClientEntity;
 import javax.swing.table.AbstractTableModel;
 import java.lang.reflect.Field;
 import java.util.LinkedList;
-import java.util.List;
 
 @AllArgsConstructor
+
 public class CustomTableModel extends AbstractTableModel {
+
     private Class<ClientEntity> cls;
     private String[] columnNames;
     private LinkedList<ClientEntity> rows;
+
+    @Override
+    public String getColumnName(int num) {
+        return columnNames[num];
+    }
 
     @Override
     public int getRowCount() {
@@ -21,12 +27,7 @@ public class CustomTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return cls.getDeclaredFields().length;
-    }
-
-    @Override
-    public String getColumnName(int column) {
-        return columnNames[column];
+        return columnNames.length;
     }
 
     @Override
