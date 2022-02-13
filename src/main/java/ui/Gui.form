@@ -17,7 +17,11 @@
         <children>
           <component id="2b7d" class="javax.swing.JTable" binding="table">
             <constraints/>
-            <properties/>
+            <properties>
+              <font name="Fira Code"/>
+              <foreground color="-4500886"/>
+              <selectionBackground color="-9457819"/>
+            </properties>
           </component>
         </children>
       </scrollpane>
